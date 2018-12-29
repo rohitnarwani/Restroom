@@ -1,0 +1,1 @@
+db.sequence.insert({_id: "user",seq: 0});
