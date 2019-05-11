@@ -1,1 +1,7 @@
+use restroomlocator;
 db.sequence.insert({_id: "user",seq: 0});
+db.getCollection('user').find();
+
+db.getCollection('user').find({"username":"gnayak43","password":"45h1lcgBdpm/nELv434ZiwejKmJobQPXJN9f/EmsA/n+EFXzkFMzqwttl86f8GNPVTX1c5NSPK8uina4w1eQYw=="});
+
+db.user.update({"username":"gnayak43"},{$set:{"isActive":true}})

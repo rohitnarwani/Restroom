@@ -16,12 +16,14 @@ public class User implements Serializable, Comparable<User> {
 	@Id
 	private long userId;
 	private String emailAddress;
-	private String phoneNumber;
+	private String mobileNumber;
 	private String firstName;
 	private String lastName;
+	private String username;
 	private String password;
 	private boolean isActive;
 	private int loginCount;
+	private boolean enabled = false;
 
 	public User() {
 	};
@@ -74,12 +76,20 @@ public class User implements Serializable, Comparable<User> {
 		this.emailAddress = emailAddress;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getMobileNumber() {
+		return mobileNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -93,8 +103,6 @@ public class User implements Serializable, Comparable<User> {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	private boolean enabled = false;
 
 	public boolean isEnabled() {
 		return enabled;
@@ -128,9 +136,9 @@ public class User implements Serializable, Comparable<User> {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber
-				+ ", firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", isActive="
-				+ isActive + ", loginCount=" + loginCount + ", enabled=" + enabled + "]";
+		return "User [userId=" + userId + ", emailAddress=" + emailAddress + ", mobileNumber=" + mobileNumber
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", password="
+				+ password + ", isActive=" + isActive + ", loginCount=" + loginCount + ", enabled=" + enabled + "]";
 	}
 
 	@Override

@@ -65,7 +65,7 @@ public class UserController {
 			securePassword = SecurityHelper.createSecurePassword(password);
 			user.setPassword(securePassword);
 		}
-		List<User> users = userRepository.findByUserIdAndPassword(user.getUserId(), user.getPassword());
+		List<User> users = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 		if (!CollectionUtils.isEmpty(users)) {
 			User userFromDB = users.get(0);
 			if (userFromDB != null && userFromDB.isActive()) {
